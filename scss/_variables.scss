@@ -1,0 +1,43 @@
+$primary-color: #F74137;
+$secondary-color: #9BCB3B;
+$bg-color: #F2F3F4;
+$border-color: #E1E2E8;
+
+$min_width: 320px;
+$tablet_width: 768px;
+$desktop_width: 1200px;
+$wideDesktop-width: 1600px;
+$max_width: 1920px;
+
+$button-height-min: 40px;
+$button-height-max: 55px;
+$button-padding-min: 30px;
+$button-padding-max: 45px;
+
+$animation-veryFast: 0.1s;
+$animation-fast: 0.2s;
+$animation-normal: 0.3s;
+$animation-slow: 0.4s;
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size, $property) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      #{$property}: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        #{$property}: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        #{$property}: $max-font-size;
+      }
+    }
+  }
+}

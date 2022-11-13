@@ -1,0 +1,104 @@
+.footer {
+  font-size: 14px;
+  background-color: #393E40;
+  color: white; }
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 42px; }
+  .footer__top {
+    font-size: 10px; }
+    @media screen and (min-width: 320px) {
+      .footer__top {
+        font-size: calc(10px + 4 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      .footer__top {
+        font-size: 14px; } }
+
+.footer__column {
+  flex: 1 1 0; }
+
+.footer__list {
+  list-style: none; }
+
+.footer__title {
+  font-weight: bold;
+  padding: 38px 0 17px 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; }
+  .footer__title::before {
+    position: absolute;
+    background-color: #F74137;
+    content: '';
+    height: 1px;
+    width: 30px;
+    bottom: -1px;
+    transition: width 0.4s ease-out; }
+  .footer__title i {
+    transform: rotate(90deg);
+    padding: 0 10px;
+    transition: transform 0.2s;
+    cursor: pointer; }
+
+.footer__link {
+  padding: 15px 0;
+  display: none;
+  position: relative;
+  font-weight: lighter; }
+  .footer__link:first-letter {
+    text-transform: capitalize; }
+
+.footer__copyright {
+  margin-bottom: 70px;
+  background-color: white;
+  color: black; }
+  .footer__copyright {
+    font-size: 10px; }
+    @media screen and (min-width: 320px) {
+      .footer__copyright {
+        font-size: calc(10px + 4 * ((100vw - 320px) / 448)); } }
+    @media screen and (min-width: 768px) {
+      .footer__copyright {
+        font-size: 14px; } }
+
+.footer__copyrightWrapper {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; }
+
+.footer__right {
+  text-align: right; }
+
+@media screen and (min-width: 768px) {
+  .footer__top {
+    flex-direction: row;
+    gap: 30px; }
+  .footer__column:hover .footer__title:before {
+    width: 100%; }
+  .footer__column .footer__title {
+    margin-bottom: 34px; }
+    .footer__column .footer__title i {
+      display: none; }
+  .footer__link {
+    display: block !important;
+    transition: color 0.4s; }
+    .footer__link::before {
+      content: '';
+      background-color: #F74137;
+      height: 1px;
+      width: 0;
+      position: absolute;
+      bottom: 12px;
+      transition: width 0.4s ease-out; }
+    .footer__link:hover {
+      color: #dddddd; }
+      .footer__link:hover::before {
+        width: 100%; }
+  .footer__copyright {
+    margin-bottom: 0; } }

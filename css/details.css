@@ -1,0 +1,83 @@
+.details__header {
+  height: 66px;
+  border-bottom: 1px solid #E1E2E8;
+  font-weight: bold;
+  text-align: center;
+  position: relative; }
+  .details__header {
+    font-size: 24px; }
+    @media screen and (min-width: 320px) {
+      .details__header {
+        font-size: calc(24px + 12 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      .details__header {
+        font-size: 36px; } }
+  .details__header::after {
+    width: 60px;
+    height: 3px;
+    background-color: #F74137;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+
+.details__title:first-letter {
+  text-transform: capitalize; }
+
+.details__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .details__table {
+    font-size: 12px; }
+    @media screen and (min-width: 320px) {
+      .details__table {
+        font-size: calc(12px + 4 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      .details__table {
+        font-size: 16px; } }
+
+.details__row {
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid #E1E2E8; }
+  .details__row:nth-child(2n+2) {
+    background-color: #F8F8F8; }
+  .details__row:last-child {
+    border-bottom: 1px solid #E1E2E8; }
+
+.details__leftCol, .details__rightCol {
+  width: 50%; }
+
+.details__leftCol {
+  text-align: right;
+  position: relative;
+  padding-right: 60px; }
+  .details__leftCol {
+    padding-right: 20px; }
+    @media screen and (min-width: 320px) {
+      .details__leftCol {
+        padding-right: calc(20px + 40 * ((100vw - 320px) / 880)); } }
+    @media screen and (min-width: 1200px) {
+      .details__leftCol {
+        padding-right: 60px; } }
+  .details__leftCol::after {
+    width: 1px;
+    height: 30px;
+    background-color: #E1E2E8;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%); }
+
+.details__rightCol {
+  padding-left: 20px; }
+  @media screen and (min-width: 320px) {
+    .details__rightCol {
+      padding-left: calc(20px + 40 * ((100vw - 320px) / 880)); } }
+  @media screen and (min-width: 1200px) {
+    .details__rightCol {
+      padding-left: 60px; } }

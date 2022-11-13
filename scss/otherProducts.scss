@@ -1,0 +1,5 @@
+@import "variables";
+
+.productSlider__topContainer {
+  @include fluid-type($min_width, $desktop_width, 24px, 36px, 'font-size');
+}

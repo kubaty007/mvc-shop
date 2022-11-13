@@ -1,0 +1,148 @@
+@import "variables";
+
+.productTileFull {
+  border: 1px solid $border-color;
+
+  &__upperName {
+    border-bottom: 1px solid $border-color;
+    padding: 10px;
+  }
+
+  &__photo {
+    border-bottom: 1px solid $border-color;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-height: 150px;
+      max-width: 150px;
+    }
+  }
+
+  &__details {
+    border-bottom: 1px solid $border-color;
+    text-align: center;
+  }
+
+  &__name, &__code, &__oldPrice, &__price {
+    margin: 10px;
+  }
+
+  &__name {
+    display: none;
+  }
+
+  &__oldPrice {
+    text-decoration: line-through;
+    color: #aaa;
+  }
+
+  &__buyZoneWrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__buyZone {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px;
+  }
+
+  &__input {
+    display: flex;
+    border: 1px solid $border-color;
+  }
+
+  &__inputButton, &__quantityInput, &__button {
+    @include fluid-type($min_width, $desktop_width, 28px, 50px, 'height');
+    border: 0;
+  }
+
+  &__inputButton {
+    @include fluid-type($min_width, $desktop_width, 13px, 23px, 'width');
+    background-color: #F8F8F8;
+
+    &--left {
+      border-right: 1px solid $border-color;
+    }
+
+    &--right {
+      border-left: 1px solid $border-color;
+    }
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  &__quantityInput {
+    @include fluid-type($min_width, $desktop_width, 30px, 54px, 'width');
+    display: flex;
+    text-align: center;
+  }
+
+  &__button {
+    @include fluid-type($min_width, $desktop_width, 28px, 50px, 'width');
+    @include fluid-type($min_width, $desktop_width, 13px, 25px, 'font-size');
+    background-color: $secondary-color;
+    color: white;
+  }
+}
+
+@media screen and (min-width: 360px){
+  .productTileFull {
+    &__middle {
+      display: flex;
+    }
+
+    &__photo {
+      padding: 10px;
+      border-right: 1px solid $border-color;
+    }
+
+    &__details {
+      width: 100%;
+      text-align: left;
+    }
+
+    &__buyZoneWrapper {
+      justify-content: flex-end;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px){
+  .productTileFull {
+    display: flex;
+    justify-content: space-between;;
+
+    &__upperName {
+      display: none;
+    }
+
+    &__photo, &__details {
+      border-bottom: none;
+    }
+
+    &__name {
+      display: block;
+    }
+
+    &__buyZoneWrapper {
+      align-items: center;
+      border-left: 1px solid $border-color;
+    }
+
+    &__buyZone {
+      min-width: 90px;
+    }
+  }
+}

@@ -1,0 +1,185 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Metropolis;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.-container {
+  @include fluid-type($min_width, $wideDesktop-width, 15px, 30px, padding-left);
+  @include fluid-type($min_width, $wideDesktop-width, 15px, 30px, padding-right);
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1900px;
+}
+
+.-bgGray {
+  background-color: $bg-color;
+}
+
+.-title {
+  @include fluid-type($min_width, $wideDesktop-width, 32px, 44px, font-size);
+}
+
+.-button {
+  @include fluid-type($min_width, $wideDesktop-width, 10px, 14px, font-size);
+  @include fluid-type($min_width, $wideDesktop-width, $button-padding-min, $button-padding-max, padding-left);
+  @include fluid-type($min_width, $wideDesktop-width, $button-padding-min, $button-padding-max, padding-right);
+  @include fluid-type($min_width, $wideDesktop-width, $button-height-min, $button-height-max, height);
+  display: flex;
+  place-content: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.-text {
+  @include fluid-type($min_width, $wideDesktop-width, 12px, 14px, font-size);
+}
+
+.-bold {
+  font-weight: bold;
+}
+
+.-mobileHidden {
+  display: none;
+}
+
+.-sectionHeader {
+  @include fluid-type($min_width, $wideDesktop-width, 30px, 40px, margin-bottom);
+  width: 100%;
+  padding: 2.25rem 0 1.25rem 0;
+  position: relative;
+  border-bottom: 1px solid $border-color;
+  line-height: 1.4;
+}
+
+.-sectionHeader::after {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: $primary-color;
+}
+
+.-strippedText {
+  background: #ddd !important;
+  padding: 3px;
+  font-weight: normal;
+}
+
+@media screen and (min-width: $tablet_width) {
+  .-mobileHidden {
+    display: block;
+  }
+}
+
+/* fonts */
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Regular.otf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Bold.otf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Light.otf");
+  font-weight: 200;
+}
+
+/* icons */
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?4etzi1');
+  src: url('../fonts/icomoon.eot?4etzi1#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?4etzi1') format('truetype'),
+  url('../fonts/icomoon.woff?4etzi1') format('woff'),
+  url('../fonts/icomoon.svg?4etzi1#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-weight: 400 !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_x:before {
+  content: "\e906";
+}
+
+.icon_available:before {
+  content: "\e907";
+}
+
+.icon_play:before {
+  content: "\e908";
+}
+
+.icon_view_01:before {
+  content: "\e909";
+}
+
+.icon_view_02:before {
+  content: "\e90a";
+}
+
+.icon_delivery:before {
+  content: "\e90b";
+}
+
+.icon_contact:before {
+  content: "\e900";
+  font-size: 22px;
+}
+
+.icon_favourites:before {
+  content: "\e901";
+  font-size: 22px;
+}
+
+.icon_account:before {
+  content: "\e902";
+  font-size: 22px;
+}
+
+.icon_arrow-right:before {
+  content: "\e903";
+}
+
+.icon_arrow-left:before {
+  content: "\e904";
+}
+
+.icon_cart:before {
+  content: "\e905";
+}
+
+.icon_menu:before {
+  content: "\e9bd";
+}

@@ -1,0 +1,154 @@
+@import "variables";
+
+.productList__controls {
+  margin: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F8F8;
+  padding: 15px;
+  @include fluid-type($min_width, $desktop_width, 10px, 12px, 'font-size');
+}
+
+.productList__form {
+  width: 100%;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+}
+
+.productList__left {
+  display: none;
+  align-items: center;
+  @include fluid-type($min_width, $desktop_width, 5px, 20px, 'gap');
+}
+
+.productList__tilesIcon, .productList__listIcon {
+  cursor: pointer;
+  transition: scale $animation-veryFast;
+
+  &:hover {
+    scale: 1.2;
+  }
+
+  &--active {
+    opacity: 0.3;
+
+    &:hover {
+      scale: none;
+    }
+
+    cursor: not-allowed;
+  }
+}
+
+.productList__controlsText {
+  display: none;
+}
+
+.productList__tilesIcon, .productList__listIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.productList__right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include fluid-type($min_width, $desktop_width, 5px, 10px, 'gap');
+  flex-wrap: wrap;
+}
+
+.productList__selects {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  gap: inherit;
+}
+
+.productList__order {
+  @include fluid-type($min_width, $desktop_width, 20px, 40px, 'height');
+  @include fluid-type($min_width, $desktop_width, 90px, 130px, 'width');
+  outline: none;
+  border: none;
+}
+
+.productList__limit {
+  @include fluid-type($min_width, $desktop_width, 20px, 40px, 'height');
+  @include fluid-type($min_width, $desktop_width, 40px, 70px, 'width');
+  outline: none;
+  border: none;
+}
+
+.pages {
+  display: flex;
+  gap: 5px;
+}
+
+.pages__item, .pages__prev, .pages__next, .pages__item--input {
+  @include fluid-type($min_width, $desktop_width, 20px, 40px, 'height');
+  @include fluid-type($min_width, $desktop_width, 20px, 40px, 'width');
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: #eeeeee;
+  }
+}
+
+.pages__prev, .pages__next {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+//remove arrows
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+//remove arrows
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.productListNav__pageInput {
+  width: 18px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: inherit;
+}
+
+.pages__item--active {
+  background-color: $primary-color;
+  color: white;
+
+  &:hover {
+    background-color: #e63026;
+  }
+}
+
+@media screen and (min-width: 850px){
+  .productList__controls {
+    justify-content: space-between;
+  }
+
+  .productList__left {
+    display: flex;
+  }
+
+  .productList__right {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 1100px){
+  .productList__controlsText {
+    display: block;
+  }
+}

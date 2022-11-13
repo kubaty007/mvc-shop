@@ -1,0 +1,122 @@
+.productTileFull {
+  border: 1px solid #E1E2E8; }
+  .productTileFull__upperName {
+    border-bottom: 1px solid #E1E2E8;
+    padding: 10px; }
+  .productTileFull__photo {
+    border-bottom: 1px solid #E1E2E8;
+    display: flex;
+    justify-content: center; }
+    .productTileFull__photo img {
+      width: 100%;
+      max-height: 150px;
+      max-width: 150px; }
+  .productTileFull__details {
+    border-bottom: 1px solid #E1E2E8;
+    text-align: center; }
+  .productTileFull__name, .productTileFull__code, .productTileFull__oldPrice, .productTileFull__price {
+    margin: 10px; }
+  .productTileFull__name {
+    display: none; }
+  .productTileFull__oldPrice {
+    text-decoration: line-through;
+    color: #aaa; }
+  .productTileFull__buyZoneWrapper {
+    display: flex;
+    justify-content: center; }
+  .productTileFull__buyZone {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px; }
+  .productTileFull__input {
+    display: flex;
+    border: 1px solid #E1E2E8; }
+  .productTileFull__inputButton, .productTileFull__quantityInput, .productTileFull__button {
+    border: 0; }
+    .productTileFull__inputButton, .productTileFull__quantityInput, .productTileFull__button {
+      height: 28px; }
+      @media screen and (min-width: 320px) {
+        .productTileFull__inputButton, .productTileFull__quantityInput, .productTileFull__button {
+          height: calc(28px + 22 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .productTileFull__inputButton, .productTileFull__quantityInput, .productTileFull__button {
+          height: 50px; } }
+  .productTileFull__inputButton {
+    background-color: #F8F8F8; }
+    .productTileFull__inputButton {
+      width: 13px; }
+      @media screen and (min-width: 320px) {
+        .productTileFull__inputButton {
+          width: calc(13px + 10 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .productTileFull__inputButton {
+          width: 23px; } }
+    .productTileFull__inputButton--left {
+      border-right: 1px solid #E1E2E8; }
+    .productTileFull__inputButton--right {
+      border-left: 1px solid #E1E2E8; }
+  .productTileFull input::-webkit-outer-spin-button,
+  .productTileFull input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .productTileFull input[type=number] {
+    -moz-appearance: textfield; }
+  .productTileFull__quantityInput {
+    display: flex;
+    text-align: center; }
+    .productTileFull__quantityInput {
+      width: 30px; }
+      @media screen and (min-width: 320px) {
+        .productTileFull__quantityInput {
+          width: calc(30px + 24 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .productTileFull__quantityInput {
+          width: 54px; } }
+  .productTileFull__button {
+    background-color: #9BCB3B;
+    color: white; }
+    .productTileFull__button {
+      width: 28px; }
+      @media screen and (min-width: 320px) {
+        .productTileFull__button {
+          width: calc(28px + 22 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .productTileFull__button {
+          width: 50px; } }
+    .productTileFull__button {
+      font-size: 13px; }
+      @media screen and (min-width: 320px) {
+        .productTileFull__button {
+          font-size: calc(13px + 12 * ((100vw - 320px) / 880)); } }
+      @media screen and (min-width: 1200px) {
+        .productTileFull__button {
+          font-size: 25px; } }
+
+@media screen and (min-width: 360px) {
+  .productTileFull__middle {
+    display: flex; }
+  .productTileFull__photo {
+    padding: 10px;
+    border-right: 1px solid #E1E2E8; }
+  .productTileFull__details {
+    width: 100%;
+    text-align: left; }
+  .productTileFull__buyZoneWrapper {
+    justify-content: flex-end; } }
+
+@media screen and (min-width: 1000px) {
+  .productTileFull {
+    display: flex;
+    justify-content: space-between; }
+    .productTileFull__upperName {
+      display: none; }
+    .productTileFull__photo, .productTileFull__details {
+      border-bottom: none; }
+    .productTileFull__name {
+      display: block; }
+    .productTileFull__buyZoneWrapper {
+      align-items: center;
+      border-left: 1px solid #E1E2E8; }
+    .productTileFull__buyZone {
+      min-width: 90px; } }

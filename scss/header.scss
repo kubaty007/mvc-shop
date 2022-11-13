@@ -1,0 +1,320 @@
+@import "_variables";
+
+.header {
+  border-bottom: 1px solid $border-color;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include fluid-type($min_width, $max_width, 8px, 14px, 'font-size');
+
+  a {
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__top, &__nav,  &__navListItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__top {
+    height: 109px;
+  }
+
+  &__logo {
+    width: auto !important;
+  }
+
+  &__nav {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: 11;
+    background-color: white;
+  }
+
+  &__navList {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border-top: 1px solid $border-color;
+
+    .cart {
+      i {
+        margin-right: 0;
+      }
+    }
+
+    &__icon:before {
+      font-size: 27px;
+    }
+
+    .cart__icon {
+      @include fluid-type($tablet_width, $max_width, 50px, 76px, 'width');
+      position: relative;
+
+      i {
+        @include fluid-type($tablet_width, $max_width, 25px, 36px, 'font-size');
+        @include fluid-type($tablet_width, $max_width, 5px, 15px, 'margin-right');
+      }
+    }
+
+    .cart__itemCounter {
+      @include fluid-type($tablet_width, $max_width, 12px, 14px, 'height');
+      @include fluid-type($tablet_width, $max_width, 22px, 26px, 'width');
+      position: absolute;
+      top: 10%;
+      @include fluid-type($tablet_width, $max_width, 5px, 15px, 'right');
+      border-radius: 2px;
+      background-color: $secondary-color;
+      @include fluid-type($tablet_width, $max_width, 8px, 10px, 'font-size');
+      font-weight: bold;
+      color: white;
+    }
+
+    .cart__text {
+      @include fluid-type($tablet_width, $max_width, 80px, 177px, 'width');
+
+      div {
+        @include fluid-type($tablet_width, $max_width, 3px, 35px, 'margin-left');
+      }
+
+      .cart__textTop {
+        display: inline-block;
+      }
+
+      .cart__textBottom {
+        display: none;
+        font-weight: normal;
+      }
+    }
+
+    .cart__arrow {
+      height: 100%;
+      width: 35px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      background-color: $secondary-color;
+      color: white;
+    }
+  }
+
+  &__navListItem {
+    height: 70px;
+    flex-direction: column;
+    flex: 1 1 0;
+    border-right: 1px solid $border-color;
+    transition: color $animation-fast;
+
+    &:last-of-type {
+      border: none;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+
+    i {
+      margin-bottom: 8px;
+    }
+
+    .icon_menu {
+      font-size: 22px;
+    }
+  }
+
+  &__bottom {
+    display: none;
+    border-top: 1px solid $border-color;
+  }
+
+  &__bottomNav {
+    width: 100%;
+  }
+
+  &__bottomList {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    gap: 20px;
+  }
+
+  &__listItem {
+    height: 57px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    transition: color $animation-fast;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-color: $primary-color;
+      height: 1.3px;
+      width: 0;
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width $animation-slow ease-out, color $animation-slow;
+    }
+
+    &:hover {
+      color: $primary-color;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &__mobileDarkBackground {
+    display: none;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    background: black;
+    transition: opacity $animation-normal;
+    z-index: 9;
+  }
+
+  &__mobile {
+    width: calc(100% - 35px);
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: white;
+    left: -100%;
+    transition: $animation-normal ease;
+  }
+
+  &__mobileTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+    border-bottom: 1px solid $border-color;
+    @include fluid-type($min_width, $tablet_width, 15px, 20px, 'font-size');
+
+    i {
+      @include fluid-type($min_width, $tablet_width, 10px, 14px, 'font-size');
+    }
+
+    .icon_x {
+      font-size: 11px;
+      @include fluid-type($min_width, $tablet_width, 13px, 18px, 'padding');
+      background-color: $border-color;
+    }
+  }
+
+  &__mobileTopLeft {
+    i {
+      @include fluid-type($min_width, $tablet_width, 0px, 14px, 'padding-right');
+    }
+  }
+
+  &__mobileLinks {
+    padding: 32px;
+    @include fluid-type($min_width, $tablet_width, 12px, 14px, 'font-size');
+  }
+
+  &__mobileList {
+    list-style: none;
+  }
+
+  .header__mobileItem {
+    border-bottom: 1px solid $border-color;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    &:last-of-type {
+      border: none;
+    }
+
+    i {
+      padding-left: 14px;
+      border-left: 1px solid $border-color;
+    }
+  }
+}
+
+.cart__icon, .cart__itemCounter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: $tablet-width) {
+  .header__top {
+    justify-content: space-between;
+  }
+
+  .header__nav {
+    height: auto;
+    width: auto;
+    display: flex;
+    position: static;
+  }
+
+  .header__navList {
+    border: none;
+    width: auto;
+    @include fluid-type($tablet_width, $max_width, 10px, 60px, 'gap');
+
+    .cart {
+      height: 55px;
+      border: 1px solid $border-color;
+    }
+
+    .cart__icon {
+      border-right: 1px solid $border-color;
+      height: 41px;
+    }
+
+    .cart__textBottom {
+      display: inline-block !important;
+    }
+
+    .cart__arrow {
+      display: flex;
+    }
+  }
+
+  .header__navListItem {
+    height: auto;
+    flex-direction: row;
+    border: none;
+    flex: none;
+
+    i {
+      @include fluid-type($tablet_width, $max_width, 10px, 17px, 'margin-right');
+      margin-bottom: 0;
+    }
+  }
+
+  .header__navListItem--mobile {
+    display: none;
+  }
+
+  .header__bottom {
+    display: flex;
+  }
+
+  .header__mobile {
+    display: none;
+  }
+}

@@ -1,0 +1,128 @@
+@import "variables";
+
+.footer {
+  font-size: 14px;
+  background-color: #393E40;
+  color: white;
+}
+
+.footer__top {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 42px;
+  @include fluid-type($min_width, $desktop_width, 10px, 14px, 'font-size');
+}
+
+.footer__column {
+  flex: 1 1 0;
+}
+
+.footer__list {
+  list-style: none;
+}
+
+.footer__title {
+  font-weight: bold;
+  padding: 38px 0 17px 0;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+  &::before {
+    position: absolute;
+    background-color: $primary-color;
+    content: '';
+    height: 1px;
+    width: 30px;
+    bottom: -1px;
+    transition: width $animation-slow ease-out;
+  }
+
+  i {
+    transform: rotate(90deg);
+    padding: 0 10px;
+    transition: transform $animation-fast;
+    cursor: pointer;
+  }
+}
+
+.footer__link {
+  padding: 15px 0;
+  display: none;
+  position: relative;
+  font-weight: lighter;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.footer__copyright {
+  margin-bottom: 70px;
+  background-color: white;
+  color: black;
+  @include fluid-type($min_width, $tablet_width, 10px, 14px, 'font-size');
+}
+
+.footer__copyrightWrapper {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__right {
+  text-align: right;
+}
+
+@media screen and (min-width: $tablet_width) {
+  .footer__top {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .footer__column {
+    &:hover {
+      .footer__title:before {
+        width: 100%;
+      }
+    }
+
+    .footer__title {
+      margin-bottom: 34px;
+
+      i {
+        display: none;
+      }
+    }
+  }
+    .footer__link {
+      display: block !important;
+      transition: color $animation-slow;
+
+      &::before {
+        content: '';
+        background-color: $primary-color;
+        height: 1px;
+        width: 0;
+        position: absolute;
+        bottom: 12px;
+        transition: width $animation-slow ease-out;
+      }
+
+      &:hover {
+        color: #dddddd;
+
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+
+    .footer__copyright {
+      margin-bottom: 0;
+    }
+  }

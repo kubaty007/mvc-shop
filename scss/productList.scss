@@ -1,0 +1,154 @@
+@import "variables";
+
+.productList__list {
+  display: grid;
+}
+
+.productTile {
+  justify-content: center;
+  width: 100%;
+
+  &::before {
+    height: 1px;
+    width: 90%;
+    content: '';
+    background-color: $border-color;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:nth-child(-n+1)::before {
+    background-color: transparent;
+  }
+}
+
+.noItems__image, .noItems__text {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noItems__image {
+  & img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 570px) {
+  .productList__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productTile {
+    &::after {
+      height: 90%;
+      width: 1px;
+      content: '';
+      background-color: $border-color;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    &:nth-last-child(1)::after {
+      background-color: transparent !important;
+    }
+
+    &:nth-child(2n+2)::after {
+      background-color: transparent;
+    }
+
+    &:nth-child(-n+2)::before {
+      background-color: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: $tablet_width) {
+  .productList__list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .productTile {
+    &::after {
+      background-color: transparent;
+    }
+
+    &:nth-child(-n+2)::before {
+      background-color: $border-color;
+    }
+
+    &:nth-child(-n+1)::before {
+      background-color: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .productList__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .productTile {
+    &::after {
+      background-color: $border-color;
+    }
+
+    &:nth-child(2n+2)::after {
+      background-color: transparent;
+    }
+
+    &:nth-child(-n+2)::before {
+      background-color: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: 1390px) {
+  .productList__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .productTile {
+    &:nth-child(2n+2)::after {
+      background-color: $border-color;
+    }
+
+    &:nth-child(3n+3)::after {
+      background-color: transparent;
+    }
+
+    &:nth-child(-n+3)::before {
+      background-color: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .productList__list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .productTile {
+    &:nth-child(3n+3)::after {
+      background-color: $border-color;
+    }
+
+    &:nth-child(4n+4)::after {
+      background-color: transparent;
+    }
+
+    &:nth-child(-n+4)::before {
+      background-color: transparent;
+    }
+  }
+}
+
+.productTile__photo {
+  @include fluid-type($min_width, $desktop_width, 165px, 265px, 'max-width');
+}

@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Metropolis; }
+
+a {
+  color: inherit;
+  text-decoration: inherit; }
+
+.-container {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 1900px; }
+  .-container {
+    padding-left: 15px; }
+    @media screen and (min-width: 320px) {
+      .-container {
+        padding-left: calc(15px + 15 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-container {
+        padding-left: 30px; } }
+  .-container {
+    padding-right: 15px; }
+    @media screen and (min-width: 320px) {
+      .-container {
+        padding-right: calc(15px + 15 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-container {
+        padding-right: 30px; } }
+
+.-bgGray {
+  background-color: #F2F3F4; }
+
+.-title {
+  font-size: 32px; }
+  @media screen and (min-width: 320px) {
+    .-title {
+      font-size: calc(32px + 12 * ((100vw - 320px) / 1280)); } }
+  @media screen and (min-width: 1600px) {
+    .-title {
+      font-size: 44px; } }
+
+.-button {
+  display: flex;
+  place-content: center;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .-button {
+    font-size: 10px; }
+    @media screen and (min-width: 320px) {
+      .-button {
+        font-size: calc(10px + 4 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-button {
+        font-size: 14px; } }
+  .-button {
+    padding-left: 30px; }
+    @media screen and (min-width: 320px) {
+      .-button {
+        padding-left: calc(30px + 15 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-button {
+        padding-left: 45px; } }
+  .-button {
+    padding-right: 30px; }
+    @media screen and (min-width: 320px) {
+      .-button {
+        padding-right: calc(30px + 15 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-button {
+        padding-right: 45px; } }
+  .-button {
+    height: 40px; }
+    @media screen and (min-width: 320px) {
+      .-button {
+        height: calc(40px + 15 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-button {
+        height: 55px; } }
+
+.-text {
+  font-size: 12px; }
+  @media screen and (min-width: 320px) {
+    .-text {
+      font-size: calc(12px + 2 * ((100vw - 320px) / 1280)); } }
+  @media screen and (min-width: 1600px) {
+    .-text {
+      font-size: 14px; } }
+
+.-bold {
+  font-weight: bold; }
+
+.-mobileHidden {
+  display: none; }
+
+.-sectionHeader {
+  width: 100%;
+  padding: 2.25rem 0 1.25rem 0;
+  position: relative;
+  border-bottom: 1px solid #E1E2E8;
+  line-height: 1.4; }
+  .-sectionHeader {
+    margin-bottom: 30px; }
+    @media screen and (min-width: 320px) {
+      .-sectionHeader {
+        margin-bottom: calc(30px + 10 * ((100vw - 320px) / 1280)); } }
+    @media screen and (min-width: 1600px) {
+      .-sectionHeader {
+        margin-bottom: 40px; } }
+
+.-sectionHeader::after {
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: #F74137; }
+
+.-strippedText {
+  background: #ddd !important;
+  padding: 3px;
+  font-weight: normal; }
+
+@media screen and (min-width: 768px) {
+  .-mobileHidden {
+    display: block; } }
+
+/* fonts */
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Regular.otf");
+  font-weight: 400; }
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Bold.otf");
+  font-weight: 600; }
+
+@font-face {
+  font-family: "Metropolis";
+  src: url("../fonts/Metropolis-Light.otf");
+  font-weight: 200; }
+
+/* icons */
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?4etzi1");
+  src: url("../fonts/icomoon.eot?4etzi1#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?4etzi1") format("truetype"), url("../fonts/icomoon.woff?4etzi1") format("woff"), url("../fonts/icomoon.svg?4etzi1#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon_"], [class*=" icon_"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-weight: 400 !important;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon_x:before {
+  content: "\e906"; }
+
+.icon_available:before {
+  content: "\e907"; }
+
+.icon_play:before {
+  content: "\e908"; }
+
+.icon_view_01:before {
+  content: "\e909"; }
+
+.icon_view_02:before {
+  content: "\e90a"; }
+
+.icon_delivery:before {
+  content: "\e90b"; }
+
+.icon_contact:before {
+  content: "\e900";
+  font-size: 22px; }
+
+.icon_favourites:before {
+  content: "\e901";
+  font-size: 22px; }
+
+.icon_account:before {
+  content: "\e902";
+  font-size: 22px; }
+
+.icon_arrow-right:before {
+  content: "\e903"; }
+
+.icon_arrow-left:before {
+  content: "\e904"; }
+
+.icon_cart:before {
+  content: "\e905"; }
+
+.icon_menu:before {
+  content: "\e9bd"; }

@@ -1,0 +1,79 @@
+@import "variables";
+
+.categoryBanner {
+  width: 100%;
+  @include fluid-type($min_width, $wideDesktop-width, 270px, 360px, height);
+  position: relative;
+}
+
+.categoryBanner__gradient {
+  background: linear-gradient(to right, rgba(30, 30, 30, 0.6) 10%, rgba(255, 255, 255, 0) 90%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+.categoryBanner__img  {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.categoryBanner__img img {
+  height: 100%;
+}
+
+.categoryBanner__wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  padding-left: 2.8vw;
+  padding-right: 2.8vw;
+  align-items: center;
+}
+
+.categoryBanner__typography {
+}
+
+.categoryBanner__text p{
+  line-height: 1.2;
+  color: white;
+  margin-block-end: 0.5em;
+  letter-spacing: 1px;
+}
+
+.categoryBanner__button {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+  transition: border 0.7s ease-out;
+}
+
+.categoryBanner__button:hover {
+  border: 1px solid #ffffff;
+}
+
+@media only Screen and (max-width: 430px) {
+  .categoryBanner__text p{
+    line-height: 1;
+    color: white;
+    margin-block-end: 0.3em;
+  }
+}

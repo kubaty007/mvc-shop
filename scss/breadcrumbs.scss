@@ -1,0 +1,44 @@
+@import "variables";
+
+.breadcrumbs {
+  width: 100%;
+  background-color: $bg-color;
+}
+
+.breadcrumbs__container {
+  max-height: 50px;
+  min-height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.breadcrumbs__part {
+  @include fluid-type($min_width, $wideDesktop-width, 12px, 14px, font-size);
+  padding: calc(0.4em + 1vw) 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: color 0.3s ease;
+  text-transform: capitalize;
+}
+
+.breadcrumbs__part:hover {
+  color: $primary-color;
+}
+
+.breadcrumbs__part::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 10px;
+  width: 14px;
+  background-color: $border-color;
+}
+
+.breadcrumbs__part:last-child::after {
+  content: "";
+  display: none;
+}

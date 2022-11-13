@@ -1,0 +1,26 @@
+{
+  "name": "elhurt",
+  "version": "1.0.0",
+  "description": "Sklep internetowy w standardzie RWD (Responsive Web Design) w podejściu Mobile First z funkcją rejestracji konta i możliwością zalogowania się. Na ten moment nie implementujemy samych funkcji zakupowych. Oferta produktowa powinna być prezentowana w oparciu o minimum dwupoziomową kategoryzację. Dodatkowo możliwość wyszukiwania produktów.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krzysztoftrol/elhurt-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krzysztoftrol/elhurt-test/issues"
+  },
+  "homepage": "https://github.com/krzysztoftrol/elhurt-test#readme",
+  "dependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

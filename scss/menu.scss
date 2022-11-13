@@ -1,0 +1,104 @@
+@import "variables";
+
+.menu {
+  width: 100%;
+  border: 1px solid $border-color;
+  border-bottom: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  border-bottom: 2px solid $primary-color;
+  @include fluid-type($min_width, $wideDesktop-width, 11px, 15px, font-size);
+}
+
+.menu__categories {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.menu__list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+
+.menu__list--nested {
+  max-height: 0;
+  background-color: $bg-color;
+  overflow: hidden;
+  transition: max-height $animation-normal ease-in-out;
+}
+
+.menu__list--show {
+  max-height: 600px;
+}
+
+.menu__item {
+  width: 100%;
+}
+
+.menu__item > div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $border-color;
+}
+
+.menu__item--nested {
+  opacity: 0;
+  border-bottom: 1px solid $border-color;
+  transition: opacity $animation-normal ease-in;
+}
+
+.menu__item--show {
+  opacity: 1;
+}
+
+.menu__icon > span{
+  font-size: 20px;
+  transition: $animation-slow
+}
+
+.menu__link {
+  overflow: hidden;
+  max-width: 80%;
+  line-height: 1.5;
+}
+
+.menu__mobileArrow {
+  font-size: 16px;
+  padding-left: 0.5rem;
+  cursor: pointer;
+  transition: color $animation-fast, transform $animation-veryFast;
+  display: flex;
+  align-items: center;
+}
+
+.menu__header, .menu__icon, .menu__link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color $animation-fast;
+}
+
+.menu__header:hover, .menu__icon:hover, .menu__link:hover {
+  color: $primary-color;
+}
+
+@media screen and (min-width: $tablet_width) {
+  .menu__categories {
+    max-height: 1500px;
+  }
+  .menu__mobileArrow {
+    display: none;
+  }
+}

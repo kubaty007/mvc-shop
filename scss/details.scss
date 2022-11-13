@@ -1,0 +1,77 @@
+@import "variables";
+
+.details {
+  &__header {
+    height: 66px;
+    border-bottom: 1px solid $border-color;
+    @include fluid-type($min_width, $desktop_width, 24px, 36px, 'font-size');
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+
+    &::after {
+      width: 60px;
+      height: 3px;
+      background-color: $primary-color;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__title {
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include fluid-type($min_width, $desktop_width, 12px, 16px, 'font-size');
+  }
+
+  &__row {
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid $border-color;
+
+    &:nth-child(2n+2) {
+      background-color: #F8F8F8;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid $border-color;
+    }
+  }
+
+  &__leftCol, &__rightCol {
+    width: 50%;
+  }
+
+  &__leftCol {
+    text-align: right;
+    position: relative;
+    padding-right: 60px;
+    @include fluid-type($min_width, $desktop_width, 20px, 60px, 'padding-right');
+
+    &::after {
+      width: 1px;
+      height: 30px;
+      background-color: $border-color;
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__rightCol {
+    @include fluid-type($min_width, $desktop_width, 20px, 60px, 'padding-left');
+  }
+}
