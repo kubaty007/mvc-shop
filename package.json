@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/krzysztoftrol/elhurt-test#readme",
   "dependencies": {
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.3"
   }
 }
